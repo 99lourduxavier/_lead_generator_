@@ -53,37 +53,6 @@ def get_list(page_html):
 
 
 
-
-#4
-#function to get internal links in contact_page of each company 
-def get_contact_page_link(html):   
-    contact_links=[]
-    list_of_companies=get_list(html)
-    for link in list_of_companies:
-        try:
-            url=link[1]
-            company_contact_link=[]
-            page_html=get_webpage(url)
-            soup = BeautifulSoup(page_html, "lxml")
-            #to extract text of company name and links using tag and class
-            internal_contact_links=soup.findAll('a')
-            links=[]
-            for links in internal_contact_links:
-                links.append(links.get('href'))
-
-            pattern=["contact","about"]
-            for link in links:
-                for items in pattern:
-                    if re.search(items,link):
-                        if link.startswith('http'):
-                            company_contact_link.append(link)
-                        else:
-                            company_contact_link.append(url+link)
-            contact_links.append(company_contact_link)    
-            return contact_links
-        except:
-            msg="logfile"
-            return msg
 #main function        
 def lead_main():     
     url="http://www.econtentmag.com/Articles/Editorial/Feature/The-Top-100-Companies-in-the-Digital-Content-Industry-The-2016-2017-EContent-100-114156.htm"   
