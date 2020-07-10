@@ -79,9 +79,10 @@ def get_contact_page_link(html):
                         else:
                             company_contact_link.append(html+link)
             contact_links.append(company_contact_link)    
-            print(contact_links)
+            return contact_links
         except:
             msg="logfile"
+            return msg
 #main function        
 def lead_main():     
     url="http://www.econtentmag.com/Articles/Editorial/Feature/The-Top-100-Companies-in-the-Digital-Content-Industry-The-2016-2017-EContent-100-114156.htm"   
