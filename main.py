@@ -61,8 +61,9 @@ def get_contact_page_link(html):
     list_of_companies=get_list(html)
     for link in list_of_companies:
         try:
+            url=link[1]
             company_contact_link=[]
-            page_html=get_webpage(html)
+            page_html=get_webpage(url)
             soup = BeautifulSoup(page_html, "lxml")
             #to extract text of company name and links using tag and class
             internal_contact_links=soup.findAll('a')
@@ -77,7 +78,7 @@ def get_contact_page_link(html):
                         if link.startswith('http'):
                             company_contact_link.append(link)
                         else:
-                            company_contact_link.append(html+link)
+                            company_contact_link.append(url+link)
             contact_links.append(company_contact_link)    
             return contact_links
         except:
