@@ -74,7 +74,8 @@ def get_contact_page_link(html : str )-> list:
                         else:
                             list_of_contact_page_links.append([company_name,company_url+item.get('href')])
         except:
-            print("contact page not found ",company_name)
+            logging.basicConfig(filename='no_contact_company.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s',level=logging.INFO)
+            logginh.info(company_name)
     [links.append(item) for item in list_of_contact_page_links if item not in links ]
     print(links)
     return links
