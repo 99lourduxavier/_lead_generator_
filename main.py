@@ -6,12 +6,6 @@ import json
 import csv
 
 
-
-
-#url for webpage
-url="http://www.econtentmag.com/Articles/Editorial/Feature/The-Top-100-Companies-in-the-Digital-Content-Industry-The-2016-2017-EContent-100-114156.htm"
-
-
 #1
 #function to get webpage
 def get_webpage(url:str)->str:
