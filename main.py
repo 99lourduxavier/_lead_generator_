@@ -2,7 +2,6 @@ import urllib.request
 import re
 from bs4 import BeautifulSoup
 import logging
-import usaddress
 import json
 import csv
 
