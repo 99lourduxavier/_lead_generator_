@@ -228,4 +228,4 @@ if __name__ == '__main__':
     filename="usa_company_address.json"
     save_to_json(filename,com_name_with_address_dict)
     json_to_csv_file(filename,"usa_company_address.csv")
-    print("Company may not have contact page and adress details stored in Log file.\nPlease Check in \"Company_details.log\" ")
+    print("Company may not have contact page and adress details stored in Log file.\nPlease Check in \"no_contact_company.log\" ")
